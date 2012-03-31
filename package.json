@@ -8,7 +8,9 @@
     "type": "git",
     "url": "git@github.com:hibariya/clipp.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "date-utils": ">= 1.2.10"
+    },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
