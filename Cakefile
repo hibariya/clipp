@@ -7,7 +7,7 @@ require 'colors'
 build = (callback) ->
   coffee = spawn 'coffee', ['-c', '-o', 'lib', 'src']
   coffee.stderr.on 'data', (data) ->
-    process.stderr.write data.toString()
+    process.stderr.write data.toString().red
   coffee.stdout.on 'data', (data) ->
     util.puts data.toString().green
   coffee.on 'exit', (code) ->
