@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var util  = require('util');
+var Clipp = require(__dirname + '/../lib/clipp');
+require('colors');
+
+var clipp   = new Clipp;
+var command = process.argv[2];
+
+switch(command) {
+  case 'push':
+    clipp.push(process.argv[3]);
+    break;
+  default:
+    var colors = ['green', 'yellow', 'cyan', 'white', 'magenta', 'red', 'grey', 'blue'];
+    var list = clipp.list()
+    for(i in list) {
+      var color = colors[Math.floor(Math.random() * colors.length)];
+      util.puts(list[i][color]);
+    }
+}
+
